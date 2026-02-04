@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+RewriteCond %{REQUEST_URI} ^/storage/(.*)$
+    RewriteRule ^ public/storage/%1 [L]
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+
+<IfModule mod_headers.c>
+    SetEnvIf Origin "http://localhost:3000$" ORIGIN_ALLOWED=$0
+    SetEnvIf Origin "https://sahara-najd-front.vercel.app/ar$" ORIGIN_ALLOWED=$0
+    SetEnvIf Origin "http://localhost:5471" ORIGIN_ALLOWED=$0
+    SetEnvIf Origin "https://sahara-najd-dashboard-ltmg.vercel.app$" ORIGIN_ALLOWED=$0
+
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS, PUT, DELETE"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
