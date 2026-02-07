@@ -26,9 +26,9 @@ class DatabaseSeeder extends Seeder
         $this->call(UserDatabaseSeeder::class);
         $this->call(AboutUsSeeder::class);
         $this->call(TypeSeeder::class);
-       // $this->call(PropertySeeder::class);
+        $this->call(PropertySeeder::class);
         $this->call(ReviewSeeder::class);
-       // $this->call(ReservationSeeder::class);
+        $this->call(ReservationSeeder::class);
         $this->call(HomeBannerSeeder::class);
         $this->call(HomeSeeder::class);
         $this->call(PageBannerSeeder::class);
