@@ -31,4 +31,12 @@ return [
     'role_not_found' => 'الدور غير موجود',
     'user_already_has_role' => 'المستخدم لديه هذا الدور بالفعل',
     'user_assigned_successfully' => 'تم تعيين الدور بنجاح',
+    'server_error' => 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى لاحقاً.',
+    'not_found' => ':model غير موجود.',
+    'route_not_found' => 'المسار المطلوب غير موجود.',
+    'method_not_allowed' => 'طريقة HTTP غير مسموح بها لهذا المسار.',
+    'http_error' => 'حدث خطأ في HTTP.',
+    'forbidden' => 'ليس لديك صلاحية لتنفيذ هذا الإجراء.',
+    'logged_out' => 'تم تسجيل الخروج بنجاح.',
+    'logout_error' => 'حدث خطأ أثناء تسجيل الخروج.',
 ];

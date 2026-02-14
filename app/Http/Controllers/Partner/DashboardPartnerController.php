@@ -35,7 +35,9 @@ class DashboardPartnerController extends Controller
 
             return $this->sendSuccess(__('response.created'));
         } catch (\Throwable $th) {
-            return $this->sendError($th->getMessage(), code: 500);
+            report($th);
+
+            return $this->sendError(__('response.server_error'), [], 500);
         }
     }
 

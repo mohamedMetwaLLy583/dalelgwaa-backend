@@ -31,4 +31,12 @@ return [
     'role_not_found' => 'Role not found',
     'user_already_has_role' => 'User already has this role',
     'user_assigned_successfully' => 'User assigned successfully',
+    'server_error' => 'An unexpected error occurred. Please try again later.',
+    'not_found' => ':model not found.',
+    'route_not_found' => 'The requested resource was not found.',
+    'method_not_allowed' => 'This HTTP method is not allowed for this endpoint.',
+    'http_error' => 'An HTTP error occurred.',
+    'forbidden' => 'You do not have permission to perform this action.',
+    'logged_out' => 'Logged out successfully.',
+    'logout_error' => 'An error occurred while logging out.',
     ];

@@ -65,9 +65,7 @@ class Property extends Model implements HasMedia
     public function scopeFilter($query, $offerType = null, $price = null, $typeId = null, $isAvailable = null)
     {
         if ($offerType) {
-            $query->whereHas('translations', function ($query) use ($offerType) {
-                $query->where('offer_type', $offerType);
-            });
+            $query->where('offer_type', $offerType);
         }
 
         if ($typeId) {

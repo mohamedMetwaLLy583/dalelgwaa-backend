@@ -30,11 +30,8 @@ class AuthService
             ], 401));
         }
 
-        // Revoke all tokens...
+        // Revoke all existing tokens
         $user->tokens()->delete();
-
-        // Revoke a specific token...
-        $user->tokens()->where('id', $user->id)->delete();
 
         return $user;
     }
@@ -46,11 +43,13 @@ class AuthService
             auth()->guard('sanctum')->user()->tokens()->delete();
 
             return response()->json([
-                'message' => 'logged out'
+                'message' => __('response.logged_out'),
             ]);
         } catch (\Throwable $th) {
+            report($th);
+
             return response()->json([
-                'message' => 'Error on logout : ' . $th->getMessage()
+                'message' => __('response.logout_error'),
             ], 500);
         }
     }

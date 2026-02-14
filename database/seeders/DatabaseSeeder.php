@@ -15,6 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        if (app()->environment('production')) {
+            $this->command->error('Seeders are disabled in production! Use --force flag only if you know what you are doing.');
+            return;
+        }
 
         // Delete old images and files from storage
         $this->clearDirectories();

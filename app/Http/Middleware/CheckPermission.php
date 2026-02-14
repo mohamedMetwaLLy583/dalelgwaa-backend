@@ -22,7 +22,7 @@ class CheckPermission
         /** @var \App\Models\User $user */
         $user = auth()->guard('sanctum')->user();
         if (!$user->hasPermission($permission)) {
-            return response()->json(['message' => 'Not has permission'], 401);
+            return response()->json(['message' => __('response.forbidden')], 403);
         }
         return $next($request);
     }

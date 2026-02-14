@@ -41,6 +41,12 @@ RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 /var/www/html/storage \
     && chmod -R 775 /var/www/html/bootstrap/cache
 
+# Production optimizations: cache config, routes, and views
+RUN php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache \
+    && php artisan storage:link
+
 # Copy nginx config
 COPY docker/nginx.conf /etc/nginx/sites-available/default
 

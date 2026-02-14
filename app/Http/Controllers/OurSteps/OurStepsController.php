@@ -49,7 +49,8 @@ class OurStepsController extends Controller
             return $this->sendSuccess(__('response.updated'));
         } catch (\Throwable $th) {
             DB::rollBack();
+            report($th);
 
-            return $this->sendError($th->getMessage());
+            return $this->sendError(__('response.server_error'), [], 500);
         }
     }}

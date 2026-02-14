@@ -36,7 +36,9 @@ class UserService
 
             return response()->json(['message' => 'user image updated successfully']);
         } catch (\Throwable $th) {
-            return response()->json(['message' => $th->getMessage()], 500);
+            report($th);
+
+            return response()->json(['message' => __('response.server_error')], 500);
         }
     }
 
@@ -53,7 +55,9 @@ class UserService
             ]);
             return response()->json(['message' => 'user updated successfully']);
         } catch (\Throwable $th) {
-            return response()->json(['message' => $th->getMessage()], 500);
+            report($th);
+
+            return response()->json(['message' => __('response.server_error')], 500);
         }
     }
     public function createAdmin($data)

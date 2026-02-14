@@ -45,7 +45,9 @@ class ContactUsRepository implements CrudRepository
             return response()->json(['status' => true, 'message' => __('response.created')]);
         } catch (\Throwable $th) {
             DB::rollBack();
-            return response()->json(['error' => $th->getMessage()], 500);
+            report($th);
+
+            return response()->json(['error' => __('response.server_error')], 500);
         }
     }
 
@@ -88,7 +90,9 @@ class ContactUsRepository implements CrudRepository
 
             return  response()->json(['message' => __('response.deleted')]);
         } catch (\Throwable $th) {
-            return  response()->json(['error' => $th->getMessage()], 500);
+            report($th);
+
+            return  response()->json(['error' => __('response.server_error')], 500);
         }
     }
 }

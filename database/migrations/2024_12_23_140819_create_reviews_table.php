@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('country');
             $table->text('review');
-            $table->unsignedTinyInteger('rating')->default(1)->check('star >= 1 and star <= 5');
+            $table->unsignedTinyInteger('rating')->default(1)->check('rating >= 1 and rating <= 5');
             $table->string('status')->default('inactive');
             $table->timestamps();
         });
