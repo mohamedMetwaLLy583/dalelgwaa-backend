@@ -23,6 +23,7 @@ class ReservationResource extends JsonResource
             'data' => $this->date,
             'time' => Carbon::parse($this->time)->format('H:i'),
             'property' => $this->property->title,
+            'property_id' => $this->property->id,
             'property_image' => $this->property->getFirstMediaUrl('main_image'),
             'offer_type' => $this->property->offer_type,
             'status' => $this->status,
