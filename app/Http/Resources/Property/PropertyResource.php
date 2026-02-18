@@ -28,6 +28,8 @@ class PropertyResource extends JsonResource
             'offer_type' => $this->offer_type,
             'is_available' => $this->is_available,
             'link' => $this->link,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
         ];
     }
 }

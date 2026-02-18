@@ -26,6 +26,8 @@ class Property extends Model implements HasMedia
         'view_count',
         'in_home',
         'link',
+        'latitude',
+        'longitude',
         'owner_name',
         'owner_phone',
         'owner_description',

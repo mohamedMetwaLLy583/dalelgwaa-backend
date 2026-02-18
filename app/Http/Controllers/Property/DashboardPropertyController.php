@@ -81,6 +81,8 @@ class DashboardPropertyController extends Controller
             $property->in_home = $request->input('in_home');
             $property->type_id = $request->input('type_id');
             $property->link = $request->input('link');
+            $property->latitude = $request->input('latitude');
+            $property->longitude = $request->input('longitude');
             $property->owner_name = $request->input('owner_name');
             $property->owner_phone = $request->input('owner_phone');
             $property->owner_description = $request->input('owner_description');
@@ -170,6 +172,8 @@ class DashboardPropertyController extends Controller
             $property->in_home = $request->input('in_home');
             $property->type_id = $request->input('type_id');
             $property->link = $request->input('link');
+            $property->latitude = $request->input('latitude');
+            $property->longitude = $request->input('longitude');
             $property->owner_name = $request->input('owner_name');
             $property->owner_phone = $request->input('owner_phone');
             $property->owner_description = $request->input('owner_description');

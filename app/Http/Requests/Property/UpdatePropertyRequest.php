@@ -46,6 +46,8 @@ class UpdatePropertyRequest extends FormRequest
             'view_count' => 'nullable|string',
             'type_id' => 'required|exists:types,id',
             'link' => 'nullable|url',
+            'latitude' => 'nullable|numeric|between:-90,90',
+            'longitude' => 'nullable|numeric|between:-180,180',
             'main_image' => 'nullable|image',
             'gallery' => 'nullable|array',
             'gallery.*' => 'image',
