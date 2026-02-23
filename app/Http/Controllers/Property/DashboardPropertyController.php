@@ -87,6 +87,7 @@ class DashboardPropertyController extends Controller
             $property->owner_phone = $request->input('owner_phone');
             $property->owner_description = $request->input('owner_description');
             $property->owner_address = $request->input('owner_address');
+            $property->user_id = auth()->id();
 
             if ($request->hasFile('main_image')) {
                 $property->addMedia($request->file('main_image'))->toMediaCollection('main_image');

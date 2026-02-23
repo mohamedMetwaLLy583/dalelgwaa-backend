@@ -56,6 +56,7 @@ class DashboardPropertyResource extends JsonResource
                     'image' => $partner->getFirstMediaUrl(),
                 ];
             })->toArray(),
+            'added_by' => $this->addedBy->name ?? null,
         ];
     }
 }

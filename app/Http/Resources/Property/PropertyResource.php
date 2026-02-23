@@ -30,6 +30,10 @@ class PropertyResource extends JsonResource
             'link' => $this->link,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
+            'area' => $this->area,
+            'rooms' => $this->rooms,
+            'bathrooms' => $this->bathrooms,
+            'added_by' => $this->addedBy->name ?? null,
         ];
     }
 }

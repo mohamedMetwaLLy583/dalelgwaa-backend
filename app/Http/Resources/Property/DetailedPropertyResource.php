@@ -87,6 +87,7 @@ class DetailedPropertyResource extends JsonResource
                     'sticker' => $partner->getFirstMediaUrl('sticker') ?: null,
                 ];
             })->toArray(),
+            'added_by' => $this->addedBy->name ?? null,
         ];
     }
 }

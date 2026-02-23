@@ -31,10 +31,16 @@ class Property extends Model implements HasMedia
         'owner_name',
         'owner_phone',
         'owner_description',
-        'owner_address'
+        'owner_address',
+        'user_id'
     ];
 
-    protected $with = ['translations'];
+    protected $with = ['translations', 'addedBy'];
+
+    public function addedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
     public $translatedAttributes = [
         'title',
         'description',
